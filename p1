@@ -1,0 +1,75 @@
+------------------------------- PART 1 ---------------------------------
+# Importing Library
+import pandas as pd
+pd.__version__
+'0.24.2'
+# Pandas Series with Python Lists
+lst = [1,2,3,4,5,6]
+print(lst)
+[1, 2, 3, 4, 5, 6]
+series = pd.Series(lst)
+print(series)
+print(type(series))
+0    1
+1    2
+2    3
+3    4
+4    5
+5    6
+dtype: int64
+<class 'pandas.core.series.Series'>
+empty = pd.Series([])
+empty
+Series([], dtype: float64)
+a = pd.Series(['p','q','r','s','t'], index = [10,11,12,13,14])
+a
+10    p
+11    q
+12    r
+13    s
+14    t
+dtype: object
+b = pd.Series(['p','q','r','s','t'], index = [10,11,12,13,14], name = 'alphabets')
+b
+10    p
+11    q
+12    r
+13    s
+14    t
+Name: alphabets, dtype: object
+scalar_series = pd.Series(0.5)
+scalar_series
+0    0.5
+dtype: float64
+scalar_series = pd.Series(0.5, index = [1,2,3])
+scalar_series
+1    0.5
+2    0.5
+3    0.5
+dtype: float64
+# Pandas Series with Python Dictionary
+dict_series = pd.Series({'p':1, 'q':2, 'r':3, 's':4, 't':5})
+dict_series
+p    1
+q    2
+r    3
+s    4
+t    5
+dtype: int64
+dict_series[0]
+1
+dict_series[0:3]
+p    1
+q    2
+r    3
+dtype: int64
+max(dict_series)
+5
+dict_series = pd.Series({'p':[1,5,6], 'q':[2,6,7], 'r':[3,9,0], 's':[4,4,5], 't':[5,1,2]})
+dict_series
+p    [1, 5, 6]
+q    [2, 6, 7]
+r    [3, 9, 0]
+s    [4, 4, 5]
+t    [5, 1, 2]
+dtype: object
